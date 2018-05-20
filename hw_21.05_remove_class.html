@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="">text</div>
+<span></span>
+<script>
+
+
+//    debugger;
+function removeClass(obj, cls) {
+    var newArr = [];
+    newArr = obj['className'].split(' ');
+    var newArrCopy = newArr.slice();
+    console.log(newArr);
+    for (i = 0; i < newArrCopy.length; i++){
+        if(newArr[i] === cls){
+            newArr.splice(i, 1)
+            i = i - 1
+        }
+    }
+    obj['className'] = newArr.join(' ');
+    return obj['className']
+}
+
+obj = {
+    className: 'my menu menu menu open'
+};
+
+removeClass(obj, 'menu');
+alert( obj.className ); // 'my'
+
+
+
+
+</script>
+</body>
+</html>
